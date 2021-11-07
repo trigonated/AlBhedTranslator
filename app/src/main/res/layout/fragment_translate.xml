@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.trigonated.albhedtranslator.ui.translate.TranslateViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_textfield"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:hint="@{viewModel.inputIsAlBhed ? @string/translate_hint_albhed : @string/translate_hint_english}"
+            app:layout_constraintBottom_toTopOf="@id/swap_languages_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:hint="@string/translate_hint_albhed">
+
+            <com.trigonated.albhedtranslator.ui.generic.AlBhedEditText
+                android:id="@+id/input_edittext"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|top"
+                android:inputType="textNoSuggestions|textMultiLine"
+                android:paddingStart="@dimen/padding_normal"
+                android:paddingTop="@dimen/padding_normal"
+                android:paddingEnd="@dimen/padding_normal"
+                android:paddingBottom="48dp"
+                app:alBhedText="@={viewModel.inputText}"
+                app:writingAlBhed="@{viewModel.writingAlBhed}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:paddingStart="@dimen/padding_normal"
+            android:paddingEnd="@dimen/padding_normal"
+            android:visibility="@{viewModel.inputIsAlBhed ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/input_textfield"
+            app:layout_constraintEnd_toEndOf="@id/input_textfield"
+            app:layout_constraintStart_toStartOf="@id/input_textfield">
+
+            <com.trigonated.albhedtranslator.ui.generic.CheckableImageButton
+                android:id="@+id/writing_albhed_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/padding_small"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_action_albhedmode"
+                android:visibility="@{viewModel.detectAlBhedAutomatically ? View.GONE : View.VISIBLE}"
+                app:checked="@={viewModel.writingAlBhed}" />
+
+            <CheckBox
+                android:id="@+id/autoDetectAlBhedCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:checked="@={viewModel.detectAlBhedAutomatically}"
+                android:text="@string/translate_auto_detect_albhed" />
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/swap_languages_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{() -> viewModel.swapLanguages()}"
+            android:padding="@dimen/padding_normal"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_action_swap_vertical"
+            app:layout_constraintBottom_toTopOf="@id/translation_textfield"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_textfield"
+            app:tint="?attr/colorOnSurface" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/translation_textfield"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:hint="@{viewModel.inputIsAlBhed ? @string/translate_hint_english : @string/translate_hint_albhed}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/swap_languages_button"
+            tools:hint="@string/translate_hint_english">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/translation_edittext"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|top"
+                android:paddingStart="@dimen/padding_normal"
+                android:paddingTop="@dimen/padding_normal"
+                android:paddingEnd="@dimen/padding_normal"
+                android:paddingBottom="48dp"
+                android:text="@{viewModel.translation}"
+                android:textIsSelectable="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:paddingStart="@dimen/padding_normal"
+            android:paddingEnd="@dimen/padding_normal"
+            app:layout_constraintBottom_toBottomOf="@id/translation_textfield"
+            app:layout_constraintEnd_toEndOf="@id/translation_textfield"
+            app:layout_constraintStart_toStartOf="@id/translation_textfield">
+
+            <ImageButton
+                android:id="@+id/copy_translation_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="@{() -> viewModel.copyTranslation()}"
+                android:padding="@dimen/padding_small"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_action_copy" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

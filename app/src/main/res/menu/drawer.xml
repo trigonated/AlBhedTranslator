@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_translate"
+            android:icon="@drawable/ic_action_translate"
+            android:title="@string/translate_title" />
+        <item
+            android:id="@+id/nav_alphabet"
+            android:icon="@drawable/ic_action_alphabet"
+            android:title="@string/alphabet_title" />
+        <item
+            android:id="@+id/nav_primers"
+            android:icon="@drawable/ic_action_primers"
+            android:title="@string/primers_title" />
+    </group>
+    <group
+        android:id="@+id/group_divider"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_action_about"
+            android:title="@string/about_title" />
+    </group>
+</menu>

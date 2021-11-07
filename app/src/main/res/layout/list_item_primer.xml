@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="onWishlistedButtonClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="item"
+            type="com.trigonated.albhedtranslator.model.objects.AlBhedPrimer" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_normal"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/title_panel"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="?colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/volume_text"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:gravity="start|center_vertical"
+                android:text="@{@string/primers_volume_x(item.volumeAsRomanNumeral)}"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="?colorOnPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/title_panel"
+                app:layout_constraintEnd_toStartOf="@id/translation_text"
+                app:layout_constraintStart_toStartOf="@id/title_panel"
+                app:layout_constraintTop_toTopOf="@id/title_panel"
+                tools:text="Volume IV" />
+
+            <TextView
+                android:id="@+id/translation_text"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:gravity="center_vertical"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textColor="?colorOnPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/title_panel"
+                app:layout_constraintEnd_toEndOf="@id/title_panel"
+                app:layout_constraintTop_toTopOf="@id/title_panel"
+                tools:text="A &#10142; B" />
+
+            <TextView
+                android:id="@+id/location_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:text="@{item.locationResId}"
+                android:textAppearance="?attr/textAppearanceListItem"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/volume_text"
+                tools:text="Description of the location" />
+
+            <CheckBox
+                android:id="@+id/obtained_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:checked="@{item.obtained}"
+                android:text="@string/primers_obtained"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/location_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

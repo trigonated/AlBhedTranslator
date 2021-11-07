@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_translate">
+
+    <fragment
+        android:id="@+id/nav_translate"
+        android:name="com.trigonated.albhedtranslator.ui.translate.TranslateFragment"
+        android:label="@string/translate_title"
+        tools:layout="@layout/fragment_translate" />
+
+    <fragment
+        android:id="@+id/nav_alphabet"
+        android:name="com.trigonated.albhedtranslator.ui.alphabet.AlphabetFragment"
+        android:label="@string/alphabet_title"
+        tools:layout="@layout/fragment_alphabet" />
+
+    <fragment
+        android:id="@+id/nav_primers"
+        android:name="com.trigonated.albhedtranslator.ui.primers.PrimersFragment"
+        android:label="@string/primers_title"
+        tools:layout="@layout/fragment_primers" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.trigonated.albhedtranslator.ui.about.AboutFragment"
+        android:label="@string/about_title"
+        tools:layout="@layout/fragment_about" />
+</navigation>

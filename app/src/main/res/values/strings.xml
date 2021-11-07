@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Al Bhed Translator</string>
+
+    <!-- Translate -->
+    <string name="translate_title">Translate</string>
+    <string name="translate_hint_albhed">Al Bhed</string>
+    <string name="translate_hint_english">English</string>
+    <string name="translate_auto_detect_albhed">Auto-detect AlBhed</string>
+    <string name="translate_text_copied">Text copied</string>
+
+    <!-- Alphabet -->
+    <string name="alphabet_title">Alphabet</string>
+    <string name="alphabet_item_albhed_to_english" formatted="true"><![CDATA[<b>%1$s</b> &#10142; %2$s]]></string>
+    <string name="alphabet_item_english_to_albhed" formatted="true"><![CDATA[%2$s &#10142; <b>%1$s</b>]]></string>
+    <string name="alphabet_menu_sort_al_en">AL &#10142; EN</string>
+    <string name="alphabet_menu_sort_en_al">EN &#10142; AL</string>
+
+    <!-- Primers -->
+    <string name="primers_title">Primers </string>
+    <string name="primers_volume_x">Volume %1$s</string>
+    <string name="primers_translation" formatted="true"><![CDATA[<b>%1$s</b> &#10142; %2$s]]></string>
+    <string name="primers_obtained">Obtained</string>
+
+    <!-- About -->
+    <string name="about_title">About</string>
+    <string name="about_github">GitHub</string>
+
+    <!-- Data -->
+    <string name="data_primer_volume1_location">Al Bhed Ship: near the crane</string>
+    <string name="data_primer_volume2_location">Besaid Village: in the Crusader\'s Lodge</string>
+    <string name="data_primer_volume3_location">S.S. Liki: in the power room</string>
+    <string name="data_primer_volume4_location">Kilika Village: in the pub</string>
+    <string name="data_primer_volume5_location">S.S. Winno: in the bridge, behind the captain</string>
+    <string name="data_primer_volume6_location">Luca Stadium: locker room opposite to the Besaid Aurochs\' room</string>
+    <string name="data_primer_volume7_location">Luca Sphere Theater: in the reception</string>
+    <string name="data_primer_volume8_location">Mi\'Hen Highroad Agency: given by Rin</string>
+    <string name="data_primer_volume9_location">Mi\'ihen Highroad: in the trail after the agency</string>
+    <string name="data_primer_volume10_location">Mushroom Rock Road: in the hidden valley</string>
+    <string name="data_primer_volume11_location">Djose Highroad: on the right of the path, obscured by a pillar</string>
+    <string name="data_primer_volume12_location">Moonflow: in the north wharf</string>
+    <string name="data_primer_volume13_location">Guadosalam: in the house left of Seymour\'s</string>
+    <string name="data_primer_volume14_location">Thunder Plains Agency: reply "Okay" to Rin</string>
+    <string name="data_primer_volume15_location">Macalania Woods: near O\'aka XXIII, obscured by plants</string>
+    <string name="data_primer_volume16_location">Lake Macalania: left of the agency</string>
+    <string name="data_primer_volume17_location">Sanubia Desert (Central): in a ruined building</string>
+    <string name="data_primer_volume18_location">Sanubia Desert (Central): near a signpost</string>
+    <string name="data_primer_volume19_location">Home (Bikanel): outside of the entrance. Missable!</string>
+    <string name="data_primer_volume20_location">Home (Bikanel): in the living quarters, on the bed. Missable!</string>
+    <string name="data_primer_volume21_location">Home (Bikanel): in the main corridor. Missable!</string>
+    <string name="data_primer_volume22_location">Bevelle Temple: path to the temple after the wedding. Missable!</string>
+    <string name="data_primer_volume23_location">Calm Lands: in the nortwest corner</string>
+    <string name="data_primer_volume24_location">Remiem Temple (Calm Lands): in the nortwest corner of the temple</string>
+    <string name="data_primer_volume25_location">Cavern of Stolen Fayth (Calm Lands): dead-end in the north</string>
+    <string name="data_primer_volume26_location">Omega Ruins: go left, right, right, left</string>
+</resources>

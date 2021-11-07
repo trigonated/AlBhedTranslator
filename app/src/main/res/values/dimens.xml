@@ -1,0 +1,15 @@
+<resources>
+    <dimen name="margin_extra_extra_large">128dp</dimen>
+    <dimen name="margin_extra_large">64dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_extra_small">4dp</dimen>
+
+    <dimen name="padding_extra_large">48dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_normal">12dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+
+    <integer name="alphabet_list_span_count">4</integer>
+</resources>

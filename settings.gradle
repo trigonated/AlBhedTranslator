@@ -1,0 +1,2 @@
+rootProject.name = "Al Bhed Translator"
+include ':app'
